@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 6 Months ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ff9aa2,#ffb7b2,#ffdac1,#e2c2ff);
+    min-height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    padding:20px;
+}
+
+/* Floating Hearts */
+
+.heart{
+    position:absolute;
+    bottom:-20px;
+    color:white;
+    animation:floatUp linear infinite;
+    opacity:0.7;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) scale(0);
+        opacity:0;
+    }
+
+    50%{
+        opacity:0.8;
+    }
+
+    100%{
+        transform:translateY(-120vh) scale(1.5);
+        opacity:0;
+    }
+}
+
+/* Main Card */
+
+.card{
+    width:100%;
+    max-width:390px;
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(12px);
+    border-radius:30px;
+    padding:28px 24px;
+    text-align:center;
+    box-shadow:0 8px 35px rgba(0,0,0,0.15);
+    color:white;
+    animation:fadeIn 2s ease;
+    z-index:2;
+    overflow-y:auto;
+    max-height:92vh;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.title{
+    font-size:2.6rem;
+    font-family:'Dancing Script',cursive;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    font-size:1.1rem;
+    margin-bottom:22px;
+    color:#fff7f7;
+}
+
+.message{
+    font-size:0.97rem;
+    line-height:1.9;
+    margin-bottom:25px;
+}
+
+/* Button */
+
+button{
+    border:none;
+    background:white;
+    color:#ff4f81;
+    padding:14px 28px;
+    border-radius:50px;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+.footer{
+    margin-top:20px;
+    font-size:0.9rem;
+    opacity:0.9;
+}
+
+/* Mobile Responsive */
+
+@media(max-width:480px){
+
+    .card{
+        padding:24px 18px;
+        border-radius:25px;
+    }
+
+    .title{
+        font-size:2.2rem;
+    }
+
+    .message{
+        font-size:0.92rem;
+    }
+
+    button{
+        width:100%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="title">Happy 6 Months ❤️</div>
+
+    <div class="subtitle">
+        To My Favorite Person 💕
+    </div>
+
+    <div class="message">
+
+        Happy 6 Months to the most special person in my life ❤️<br><br>
+
+        These six months with you have been one of the happiest and most beautiful moments of my life.
+        Every laugh, every conversation, every memory we made together became something I treasure deeply 💖<br><br>
+
+        Thank you for always being there for me,
+        for understanding me,
+        supporting me,
+        making me smile,
+        and loving me even on my difficult days ✨<br><br>
+
+        You make my world brighter,
+        my heart calmer,
+        and my life so much more meaningful.
+        I never imagined someone could make me feel this loved and special 💞<br><br>
+
+        In these 6 months,
+        we shared happiness,
+        memories,
+        dreams,
+        little fights,
+        endless talks,
+        and countless beautiful moments together ❤️<br><br>
+
+        I hope this is only the beginning of something forever.
+        I want more memories,
+        more hugs,
+        more late-night talks,
+        and many more beautiful months with you 💗<br><br>
+
+        Thank you for being my comfort person,
+        my happiness,
+        my safe place,
+        and the best part of my life 💕<br><br>
+
+        Happy 6 Months My Love ❤️
+
+    </div>
+
+    <button onclick="startLove()">
+        Click For Surprise ✨
+    </button>
+
+    <div class="footer">
+        Forever Starts With Us 💖
+    </div>
+
+</div>
+
+<script>
+
+/* Floating Hearts */
+
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    heart.classList.add("heart");
+
+    heart.innerHTML="❤";
+
+    heart.style.left=Math.random()*100+"vw";
+
+    heart.style.fontSize=(Math.random()*25+15)+"px";
+
+    heart.style.animationDuration=(Math.random()*4+5)+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },9000);
+}
+
+setInterval(createHeart,250);
+
+/* Confetti Animation */
+
+function startLove(){
+
+    confetti({
+        particleCount:180,
+        spread:120,
+        startVelocity:40,
+        scalar:1.2,
+        origin:{
+            y:0.6
+        }
+    });
+
+    setTimeout(()=>{
+        confetti({
+            particleCount:120,
+            angle:60,
+            spread:80,
+            origin:{ x:0 }
+        });
+
+        confetti({
+            particleCount:120,
+            angle:120,
+            spread:80,
+            origin:{ x:1 }
+        });
+    },300);
+
+    alert("Happy 6 Months ieid ng 🫶💋❤️");
+}
+
+/* Auto Confetti On Load */
+
+window.onload=()=>{
+
+    confetti({
+        particleCount:120,
+        spread:100,
+        origin:{
+            y:0.7
+        }
+    });
+
+};
+
+</script>
+
+</body>
+</html>
